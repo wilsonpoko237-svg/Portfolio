@@ -1,75 +1,311 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>GWODOG | Développeur Web</title>
-<link rel="stylesheet" href="style.css">
+<html class="dark" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portfolio Anthoni Wilson - Neon Dark Mode (FR)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#0a47c2",
+              "neon-blue": "#00d4ff",
+              "background-light": "#f5f6f8",
+              "background-dark": "#050505",
+              "surface-dark": "#101622",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #050505;
+        }
+        .neon-text {
+            text-shadow: 0 0 10px rgba(10, 71, 194, 0.8), 0 0 20px rgba(10, 71, 194, 0.4);
+        }
+        .neon-border {
+            box-shadow: 0 0 15px rgba(10, 71, 194, 0.5);
+            border: 1px solid rgba(10, 71, 194, 0.6);
+        }
+        .neon-glow-hover:hover {
+            box-shadow: 0 0 25px rgba(10, 71, 194, 0.8);
+            transition: all 0.3s ease;
+        }
+        /* Persistent glow class used by JS - more intense and animates */
+        .neon-glow-hover.glow {
+          box-shadow: 0 0 35px rgba(10, 71, 194, 0.95), 0 0 60px rgba(0, 212, 255, 0.25) !important;
+          transform: translateY(-2px);
+          transition: box-shadow 0.25s ease, transform 0.2s ease;
+        }
+        /* Glow for borders and cards */
+        .neon-border.glow {
+          box-shadow: 0 0 40px rgba(10, 71, 194, 0.6), inset 0 0 12px rgba(0,212,255,0.06);
+          border-color: rgba(10,71,194,0.9);
+        }
+        .glass.glow {
+          box-shadow: 0 10px 40px rgba(10,71,194,0.12), 0 0 30px rgba(10,71,194,0.14);
+          border-color: rgba(10,71,194,0.22);
+          transform: translateY(-4px);
+        }
+        /* Icon/text glow */
+        .material-symbols-outlined.glow, .neon-text.glow {
+          text-shadow: 0 0 12px rgba(0,212,255,0.9), 0 0 28px rgba(10,71,194,0.55);
+          color: #00d4ff;
+        }
+        .grid-bg {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(10, 71, 194, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(10, 71, 194, 0.05) 1px, transparent 1px);
+        }
+        .glass {
+            background: rgba(16, 22, 34, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
 </head>
-<body>
-    
-    <div id="particles-js"></div>
-
-<header>
-  <h1><span id="typing"></span></h1>
-  <p>Développeur Web </p>
-  <a href="#projects" class="btn"> Mes projets</a>
-</header>
-
-<section class="about">
-  <h2>À propos de moi</h2>
-  <p>
-    Je suis GWODOG Anthoni Wilson, développeur web junior passionné par la création
-    de sites modernes et par la Data Analyse. Je transforme des idées en expériences numériques. 
-  </p>
-</section>
-
-<section id="projects" class="projects">
-  <h2>Mes Projets</h2>
-
-  <div class="project-card">
-    
-    <div class="project-content">
-      <h3>Portfolio Personnel</h3></br>
-      <p>Site web responsive pour présenter mon profil et mes projets.</p>
-      <p><strong>Compétences :</strong> HTML, CSS, JavaScript</p>
-      <a href="#" class="btn">Voir le projet</a>
-    </div>
-  </div>
-
-  <div class="project-card">
-    
-    <div class="project-content">
-      <h3>BMGreem</h3>
-      <p>Application qui permet à un visiteur de devenir Acheteur ou vendeur de produit destinés à la construction de maisons</p>
-      <p><strong>Compétences :</strong> HTML, CSS, JavaScript</p>
-      <a href="#" class="btn">Voir le projet</a>
-    </div>
-  </div>
-
-
-  <div class="project-card">
-    
-    <div class="project-content">
-      <h3>Nyatta Sida</h3>
-      <p>Application simple pour gérer les tâches quotidiennes.</p>
-      <p><strong>Compétences :</strong> HTML, CSS, JavaScript</p>
-      <a href="#" class="btn">Voir le projet</a>
-    </div>
-  </div>
-
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white selection:bg-primary selection:text-white">
+<div class="relative min-h-screen w-full flex flex-col overflow-x-hidden grid-bg">
+<header class="sticky top-0 z-50 w-full px-6 lg:px-20 py-4 glass border-b border-primary/20">
+<div class="max-w-7xl mx-auto flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-primary rounded-lg neon-border">
+<span class="material-symbols-outlined text-white">terminal</span>
+</div>
+<h2 class="text-xl font-bold tracking-tighter text-white neon-text uppercase">GWODOG</h2>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#about">À propos</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#passion">Passion</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#projects">Projets</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#experience">Expérience</a>
+</nav>
+<div class="flex items-center gap-4">
+<a href="#contact-info" class="bg-primary hover:bg-primary/80 text-white text-sm font-bold px-6 py-2.5 rounded-lg transition-all neon-glow-hover" role="link">
+          Me Contacter
+        </a>
   
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<section class="relative flex flex-col items-center justify-center pt-32 pb-24 px-6 text-center">
+<div class="absolute inset-0 bg-gradient-to-b from-primary/10 to-transparent pointer-events-none"></div>
+<div class="z-10 max-w-4xl mx-auto">
+<span class="inline-block px-4 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-primary text-xs font-bold uppercase tracking-widest mb-6">
+                    DISPONIBLE POUR FREELANCE
+                </span>
+<h1 class="text-6xl md:text-8xl font-black text-white leading-none tracking-tight mb-8 neon-text">
+                    GWODOG <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-neon-blue">Anthoni Wilson</span>
+</h1>
+<p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed mb-10">
+                    Développeur Web  dans la création d'expériences numériques.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<a href="#projects" class="inline-flex items-center justify-center bg-primary text-white font-bold px-8 py-4 rounded-xl neon-glow-hover gap-2">
+            Voir mes projets <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+<button class="bg-transparent border border-slate-700 hover:border-primary text-white font-bold px-8 py-4 rounded-xl transition-all js-open-modal neon-glow-hover" type="button">
+            Contact
+          </button>
+
+</div>
+</div>
+</section>
+<section class="py-24 px-6 lg:px-20 bg-surface-dark/30" id="about">
+<div class="max-w-7xl mx-auto">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<div>
+<h2 class="text-4xl font-bold text-white mb-6 flex items-center gap-3">
+<span class="text-primary material-symbols-outlined text-4xl">person</span>
+                                À propos de moi
+                            </h2>
+<p class="text-slate-400 text-lg leading-relaxed">
+                                Mon parcours, de passionné  à développeur , a été alimenté par une curiosité sur La data et le fonctionnement du web. Je construis le futur du web pixel par pixel, m'assurant que chaque produit est accessible, rapide et visuellement percutant.
+                            </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="p-6 rounded-xl glass border-primary/20 hover:border-primary/50 transition-all">
+<span class="material-symbols-outlined text-primary mb-4">history_edu</span>
+<h3 class="text-white font-bold mb-2">Mon Parcours</h3>
+<p class="text-sm text-slate-400">Niveau de 2e année universitaire dans le domaine de l'informatique ,grâce à une discipline autodidacte rigoureuse j'apprends les bases du développement web.</p>
+</div>
+<div class="p-6 rounded-xl glass border-primary/20 hover:border-primary/50 transition-all">
+<span class="material-symbols-outlined text-primary mb-4">terminal</span>
+<h3 class="text-white font-bold mb-2">Mon Expertise</h3>
+<p class="text-sm text-slate-400">développement web .</p>
+</div>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute -inset-1 bg-gradient-to-r from-primary to-neon-blue rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+<div class="relative bg-background-dark rounded-2xl overflow-hidden border border-white/10 aspect-video">
+<img alt="Motif de grille numérique bleue abstraite représentant du code" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1P0kPbfVwuq0TjHa9m7D04sbW3vVo2MyEhc4vbmldt3lUd4X791RER-DVMBIbBzZ5y4amXZ3wXOFIUTg2ZvDCj3Z1-unK0gdMPYUs39rddzlrvCYboMV25ewK9AZo9e0kRHBIWA6ZpYQVynvi09uV22SZIOtZwAkzWHl1mRnIoSUAfSaGeegS66ZhSrD5ZZO9lU-UibAKQ17RPASUKGYYZuYp9wn-d8saGFJCCg6kiqjZmBg72f_vqb8RRWp3xo0CdFKfftDE29q8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-8 flex flex-col justify-end">
+<p class="text-primary font-mono text-sm">C:\Utilisateurs\GWODOG\Portfolio&gt;</p>
+<p class="text-white text-lg font-bold">"Concevoir l'excellence numérique avec une touche néon."</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 px-6 lg:px-20" id="passion">
+<div class="max-w-7xl mx-auto">
+<div class="neon-border rounded-2xl overflow-hidden glass p-1">
+<div class="bg-background-dark/80 rounded-xl p-8 lg:p-12 flex flex-col lg:flex-row gap-12 items-center">
+<div class="w-full lg:w-1/2 aspect-video rounded-lg overflow-hidden border border-primary/30">
+<img alt="Éditeur de code minimaliste avec coloration syntaxique bleue" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlDCcalnSM8uETgmuUs_EvIjei8Y-nL9bfQ6UmJ7gTdq0PZwXkOpgEJS51y9xzU_WbpRkSidSa0vFvCx3GJvjgMs7V_YK7UqfmG7Wuu5tLOUONAzbAKIR4vKVoGOYGJouVsY4SRqrTymeev1d5M5arbh51nzhziH8WvpEynWNNeadJ5U84nQ7OTA6vjNq9NJ4wRv5P0a4JZiXiWAcwW1iPYz1uPmE7Dsj8Bz_Zb7Ig29Iv4YTMHFXjWNvG19Od5-5PqfrGqd4p5KSI"/>
+</div>
+<div class="w-full lg:w-1/2 space-y-6">
+<div class="inline-flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined">favorite</span>
+<span class="font-bold tracking-widest uppercase text-xs">VALEUR CLÉ</span>
+</div>
+<h2 class="text-4xl font-black text-white">Ma Passion</h2>
+<p class="text-slate-400 text-lg leading-relaxed">
+                                j'aime créer. Pour moi, le développement web ne consiste pas seulement à faire fonctionner les choses — il s'agit de créer une connexion émotionnelle et transparente entre l'utilisateur et l'interface.
+                            </p>
+<div class="flex items-center gap-6 pt-4">
+<button class="bg-primary text-white font-bold px-6 py-3 rounded-lg neon-glow-hover text-sm">
+                                    En savoir plus
+                                </button>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-slate-500 hover:text-primary cursor-pointer transition-colors">hub</span>
+<span class="material-symbols-outlined text-slate-500 hover:text-primary cursor-pointer transition-colors">deployed_code</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 
-<section class="contact">
-  <h2>Contact</h2>
-  <p>Email : <strong>gwodog@gmail.com</strong></p>
+<!-- Contact info section -->
+<section class="py-20 px-6 lg:px-20" id="contact-info">
+  <div class="max-w-7xl mx-auto">
+    <div class="neon-border rounded-2xl overflow-hidden glass p-1">
+      <div class="bg-background-dark/80 rounded-xl p-8 lg:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <h2 class="text-3xl font-bold text-white mb-2">Me contacter</h2>
+          <p class="text-slate-400 mb-4">Vous pouvez me joindre par email ou téléphone.</p>
+          <p class="text-white font-mono">Email: <a href="mailto:anthoniwilsongwodog@gmail.com" class="text-neon-blue hover:text-primary">anthoniwilsongwodog@gmail.com</a></p>
+          <p class="text-white font-mono mt-2">Tél: <a href="tel:0555000981" class="text-neon-blue hover:text-primary">0555000981</a></p>
+        </div>
+        <div class="w-full md:w-1/3">
+          <button class="w-full bg-primary text-white font-bold py-3 rounded-lg neon-glow-hover js-open-modal">Envoyer un message</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<footer>
-  <p>© 2026 – GWODOG Anthoni Wilson</p>
+<!-- Projects -->
+<section class="py-24 px-6 lg:px-20" id="projects">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-4xl font-bold text-white mb-8">Mes Projets</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="p-6 rounded-xl glass border-primary/20">
+        <h3 class="text-white font-bold mb-2">Projet 1 — Nyatta Sida</h3>
+        <p class="text-slate-400 mb-4">Site web qui informe, donne des moyens de préventions contres le VIH/SIDA. </p>
+        <button class="px-4 py-2 bg-primary text-white rounded-lg js-toggle-detail neon-glow-hover" data-target="#proj-1" aria-expanded="false">Voir</button>
+        <div id="proj-1" class="mt-4 text-slate-300 hidden">Détails du projet 1 utilisation d'image explicative , documentation, : </div>
+      </div>
+      <div class="p-6 rounded-xl glass border-primary/20">
+        <h3 class="text-white font-bold mb-2">Projet 2 — Mon portofolio</h3>
+        <p class="text-slate-400 mb-4">Site web personnel qui présente mes compétences et mes réalisations.</p>
+        <button class="px-4 py-2 bg-primary text-white rounded-lg js-toggle-detail neon-glow-hover" data-target="#proj-2" aria-expanded="false">Voir</button>
+        <div id="proj-2" class="mt-4 text-slate-300 hidden">Détails du projet 2 : objectifs, stack technique et statut.</div>
+      </div>
+      <div class="p-6 rounded-xl glass border-primary/20">
+        <h3 class="text-white font-bold mb-2">Projet 3 — API</h3>
+        <p class="text-slate-400 mb-4">Courte description du projet 3.</p>
+        <button class="px-4 py-2 bg-primary text-white rounded-lg js-toggle-detail neon-glow-hover" data-target="#proj-3" aria-expanded="false">Voir</button>
+        <div id="proj-3" class="mt-4 text-slate-300 hidden">Détails du projet 3 : authentification et documentation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-12 border-y border-white/5 bg-background-dark/50">
+<div class="max-w-7xl mx-auto px-6">
+<h3 class="text-center text-xs font-bold text-slate-500 uppercase tracking-[0.3em] mb-10">TECHNOLOGIES MAÎTRISÉES</h3>
+<div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all">
+<div class="flex items-center gap-2">
+
+<span class="font-bold text-white">JavaScript</span>
+</div>
+<div class="flex items-center gap-2">
+
+<span class="font-bold text-white">Html</span>
+</div>
+<div class="flex items-center gap-2">
+
+<span class="font-bold text-white">Css</span>
+</div>
+
+<div class="flex items-center gap-2">
+
+<span class="font-bold text-white">Langage C</span>
+</div>
+
+</div>
+</div>
+</section>
+</main>
+<footer class="py-12 px-6 lg:px-20 border-t border-white/10 bg-background-dark">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-3">
+<h2 class="text-xl font-bold tracking-tighter text-white neon-text uppercase">GWODOG</h2>
+</div>
+<p class="text-slate-500 text-sm">
+                © 2026 Anthoni Wilson .
+            </p>
+<div class="flex gap-6">
+
+<a class="text-slate-400 hover:text-primary transition-all js-open-modal neon-glow-hover" href="#" role="button">
+<span class="material-symbols-outlined">mail</span>
+</a>
+</div>
+</div>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</div>
+<div class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-6" id="modal-overlay">
+<div class="glass neon-border rounded-2xl max-w-lg w-full p-8 relative">
+<button class="absolute top-4 right-4 text-slate-500 hover:text-white js-close-modal" type="button" aria-label="Fermer">
+<span class="material-symbols-outlined">close</span>
+</button>
+<h3 class="text-2xl font-bold text-white mb-6">Envoyer un message</h3>
+<div class="space-y-4">
+<div>
+<label class="block text-xs font-bold text-slate-400 uppercase mb-2">Votre Nom</label>
+<input class="w-full bg-surface-dark border-white/10 rounded-lg text-white focus:border-primary focus:ring-primary" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-bold text-slate-400 uppercase mb-2">Message</label>
+<textarea class="w-full bg-surface-dark border-white/10 rounded-lg text-white focus:border-primary focus:ring-primary" rows="4"></textarea>
+</div>
+<button class="w-full bg-primary text-white font-bold py-3 rounded-lg neon-glow-hover flex items-center justify-center gap-2">
+                Envoyer la transmission <span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+</div>
+</div>
+
 <script src="script.js"></script>
 
-</body>
-</html>
+</body></html>
